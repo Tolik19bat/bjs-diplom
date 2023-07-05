@@ -1,14 +1,14 @@
 "use strict";
 class UserForm {
-  constructor(
-    loginFormCallback,
-    registerFormCallback,
-  ) {
+  constructor(data, loginFormCallback) {
+    this.data = data;
     this.loginFormCallback = loginFormCallback;
-    this.registerFormCallback = registerFormCallback;
   }
-  loginFormCallback = loginFormAction(data);
-  loginFormCallback();
+  loginFormCallback = function (data) {
+    loginForm(data)
+    return data
+  };
+  
   registerFormCallback();
 }
 class ApiConnector {
